@@ -25,7 +25,7 @@ project-root/
 │   │   └── auth.js
 │   ├── server.js
 │   ├── package.json
-│   └── .env                 (not shown: contains secrets like MONGO_URI, JWT_SECRET)
+│   └── .env                
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
@@ -38,7 +38,7 @@ project-root/
 │   │   ├── App.js
 │   │   └── index.js
 │   ├── package.json
-│   └── .env                 (optional: could contain API base URL)
+│   └── .env                 
 └── README.md
 
 ## ⚙️ Setup Instructions
