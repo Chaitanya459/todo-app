@@ -2,9 +2,6 @@
 
 A full-stack To-Do web application with user authentication and task management.
 
-## 🚀 Live Demo
-https://todo-app-flame-nine-39.vercel.app/login
-
 ## 🛠 Tech Stack
 - Frontend: React, Material UI
 - Backend: Node.js, Express.js, MongoDB Atlas
