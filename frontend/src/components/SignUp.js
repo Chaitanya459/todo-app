@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, Button, Typography, Alert } from '@mui/material';
 import { useNavigate, Link } from 'react-router-dom';
+import API_BASE_URL from '../config';
 
 function SignUp() {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ function SignUp() {
 
     // Send registration request to API
     try {
-      const res = await fetch('/api/register', {
+      const res = await fetch(`${API_BASE_URL}/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password })

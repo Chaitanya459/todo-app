@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import { TextField, Button, Typography, Alert } from '@mui/material';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
+import API_BASE_URL from '../config';
+
 
 function Login() {
   const navigate = useNavigate();
@@ -18,7 +20,7 @@ function Login() {
     }
     setError(null);
     try {
-      const res = await fetch('/api/login', {
+      const res = await fetch(`${API_BASE_URL}/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })

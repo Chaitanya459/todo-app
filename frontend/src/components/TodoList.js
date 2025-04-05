@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 import TaskForm from './TaskForm';
 import { Button } from '@mui/material';
+import API_BASE_URL from '../config';
 
 
 function TodoList() {
@@ -17,8 +18,9 @@ function TodoList() {
   // Fetch tasks on component mount
   useEffect(() => {
     const fetchTasks = async () => {
+    
       try {
-        const res = await fetch('/api/tasks', {
+        const res = await fetch(`${API_BASE_URL}/api/tasks`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (res.ok) {
@@ -42,7 +44,7 @@ function TodoList() {
 
   const handleAddTask = async (text) => {
     try {
-      const res = await fetch('/api/tasks', {
+      const res = await fetch(`${API_BASE_URL}/api/tasks`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -67,7 +69,7 @@ function TodoList() {
     if (!editingTask) return;
     const taskId = editingTask._id;
     try {
-      const res = await fetch(`/api/tasks/${taskId}`, {
+      const res = await fetch(`${API_BASE_URL}/api/tasks/${taskId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -91,7 +93,7 @@ function TodoList() {
 
   const handleDeleteTask = async (taskId) => {
     try {
-      const res = await fetch(`/api/tasks/${taskId}`, {
+      const res = await fetch(`${API_BASE_URL}/api/tasks/${taskId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
